@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Status Guard</string>
+    <string name="title">Hide WhatsApp Status at selected times</string>
+    <string name="description">Set one daily unlock window. Outside this window, the app blocks WhatsApp Status/Updates screen only.</string>
+    <string name="block_start_time">Block starts at: %1$s</string>
+    <string name="block_end_time">Block ends at: %1$s</string>
+    <string name="save_window">Save daily window</string>
+    <string name="open_accessibility">Enable blocker service</string>
+    <string name="current_window">Current blocked window: %1$s to %2$s</string>
+    <string name="status_blocked_message">Status is hidden right now. It will unlock at your fixed daily time.</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.StatusGuard" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@android:color/holo_green_dark</item>
+        <item name="colorPrimaryVariant">@android:color/holo_green_light</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+    </style>
+</resources>

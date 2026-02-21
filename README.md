@@ -14,9 +14,9 @@ This project is a simple Android app that helps you avoid opening **WhatsApp Sta
 ### Do I need Android Studio?
 **No, not strictly required.**
 You can compile using only:
-- JDK (recommended: **JDK 17**)
-- Android SDK **Command-line Tools**
-- Gradle (or Gradle Wrapper)
+- **JDK 17** ([Temurin](https://adoptium.net/temurin/releases/?version=17), [Microsoft Build of OpenJDK](https://learn.microsoft.com/java/openjdk/download))
+- Android SDK **Command-line Tools** ([official download page](https://developer.android.com/studio#command-tools))
+- **Gradle** ([install guide](https://gradle.org/install/)) or Gradle Wrapper
 
 Android Studio is easier, but if you don’t want heavy software, command-line build works.
 
@@ -24,6 +24,12 @@ Android Studio is easier, but if you don’t want heavy software, command-line b
 **Yes.** Typical flow:
 1. Build APK on Windows.
 2. Transfer APK to phone and install, or install directly using `adb`.
+
+### What is Android SDK Build-Tools? Is it same as ADB?
+**They are different.**
+- **Android SDK Build-Tools** = compilers/packagers used to build APKs (`aapt2`, `d8`, `zipalign`, `apksigner`). ([Build tools package](https://developer.android.com/tools/releases/build-tools))
+- **ADB (Android Debug Bridge)** = command-line tool to talk to your phone (install APK, see devices, logs). ([ADB docs](https://developer.android.com/tools/adb))
+- ADB comes from **Platform-Tools** package, not Build-Tools. ([Platform-tools release notes](https://developer.android.com/tools/releases/platform-tools))
 
 ---
 
@@ -35,8 +41,8 @@ Android Studio is easier, but if you don’t want heavy software, command-line b
 
 ### 1) Install required tools
 
-1. Install **JDK 17** (Temurin/Microsoft/OpenJDK are fine).
-2. Download Android **Command-line Tools** zip from official Android developer site.
+1. Install **JDK 17**.
+2. Download Android **Command-line Tools** zip from the official page: <https://developer.android.com/studio#command-tools>
 3. Extract to (example):
    - `C:\Android\cmdline-tools\latest\...`
 4. Create SDK folders if needed:
@@ -60,6 +66,9 @@ Run in PowerShell/CMD:
 sdkmanager --licenses
 sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
 ```
+
+Reference:
+- `sdkmanager` docs: <https://developer.android.com/tools/sdkmanager>
 
 ### 4) Point project to SDK
 
@@ -102,6 +111,8 @@ app\build\outputs\apk\debug\app-debug.apk
 adb devices
 adb install -r app\build\outputs\apk\debug\app-debug.apk
 ```
+
+ADB docs: <https://developer.android.com/tools/adb>
 
 ### Option B: Manual file transfer
 1. Copy APK to phone storage.

@@ -15,7 +15,7 @@ This project is a simple Android app that helps you avoid opening **WhatsApp Sta
 **No, not strictly required.**
 You can compile using only:
 - **JDK 17** ([Temurin](https://adoptium.net/temurin/releases/?version=17), [Microsoft Build of OpenJDK](https://learn.microsoft.com/java/openjdk/download))
-- Android SDK **Command-line Tools** ([official download page](https://developer.android.com/studio#command-tools))
+- Android SDK **Command-line Tools** ([Command-line tools docs](https://developer.android.com/tools), [direct download list](https://developer.android.com/studio#command-line-tools-only))
 - **Gradle** ([install guide](https://gradle.org/install/)) or Gradle Wrapper
 
 Android Studio is easier, but if you don’t want heavy software, command-line build works.
@@ -42,7 +42,7 @@ Android Studio is easier, but if you don’t want heavy software, command-line b
 ### 1) Install required tools
 
 1. Install **JDK 17**.
-2. Download Android **Command-line Tools** zip from the official page: <https://developer.android.com/studio#command-tools>
+2. Download Android **Command-line Tools** zip from the official command-line-tools page: <https://developer.android.com/studio#command-line-tools-only>
 3. Extract to (example):
    - `C:\Android\cmdline-tools\latest\...`
 4. Create SDK folders if needed:
@@ -118,6 +118,22 @@ ADB docs: <https://developer.android.com/tools/adb>
 1. Copy APK to phone storage.
 2. Open APK from file manager.
 3. Allow install from unknown sources when prompted.
+
+---
+
+
+## Want me to "just give APK" from repo?
+
+I cannot reliably compile and upload a binary directly from this chat environment every time (network/tooling limits can block Android downloads), but I added **GitHub Actions** so your repo can build APK automatically.
+
+### How to get the compiled APK from your repo
+1. Push this repo to GitHub.
+2. Open **Actions** tab.
+3. Run workflow: **Build Android APK** (or use the latest run triggered by push).
+4. Download artifact: **app-debug-apk**.
+5. Install `app-debug.apk` on your phone.
+
+Workflow file: `.github/workflows/build-apk.yml`
 
 ---
 
